@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parser_navigation"
+    app:startDestination="@id/nav_parser">
+
+    <fragment
+        android:id="@+id/nav_parser"
+        android:name="com.sample.androidparser.ui.view.ParserFragment"
+        tools:layout="@layout/fragment_parser">
+
+        <action
+            android:id="@+id/action_nav_parser_to_nav_criteria"
+            app:destination="@id/nav_criteria" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_criteria"
+        android:name="com.sample.androidparser.ui.view.CriteriaFragment"
+        tools:layout="@layout/fragment_criteria">
+
+        <argument
+            android:name="parserDetails"
+            android:defaultValue="@null"
+            app:argType="com.sample.androidparser.data.model.Parser"
+            app:nullable="true" />
+    </fragment>
+</navigation>
