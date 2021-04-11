@@ -1,5 +1,6 @@
 package com.sample.androidparser.ui.view
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -63,6 +64,12 @@ class CriteriaFragment : Fragment() {
             "$acc\n\nand \n\n$s"
         }
 
+        tv_name.text = parser.name
+        tv_tag.text = parser.tag
+        if (parser.color == "green")
+            tv_tag.setTextColor(Color.parseColor("#3CC501"))
+        else if (parser.color == "red")
+            tv_tag.setTextColor(Color.parseColor("#E80000"))
         tv_criteria.text = formattedCriteria
     }
 }
